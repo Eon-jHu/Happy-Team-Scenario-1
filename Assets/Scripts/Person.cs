@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Person : MonoBehaviour
+public abstract class Person : MonoBehaviour
 {
     // variables.
     private Vector2 m_Position;

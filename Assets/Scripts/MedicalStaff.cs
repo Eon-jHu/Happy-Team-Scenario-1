@@ -4,17 +4,21 @@ using UnityEngine;
 
 public abstract class MedicalStaff : Person
 {
-    //private Queue<Patient> PatientRoster;
+    // variables
+    private Queue<Patient> PatientRoster;
     private float m_HealValue;
 
-    //public void AddPatientToQueue(Patient)
-    //{
+    // add & remove
+    public void AddPatientToQueue(Patient _Patient)
+    {
+        PatientRoster.Enqueue(_Patient); // Adds Patient to Patient Roster
+    }
+    public void RemovePatient(Patient _Patient)
+    {
+        PatientRoster?.Enqueue(_Patient); // removes (ideally) from Patient Roster
+    }
 
-    //}
-    //public void RemovePatient(Patient)
-    //{
 
-    //}
 
     public abstract bool TreatPatient();
 }
