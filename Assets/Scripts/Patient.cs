@@ -6,8 +6,8 @@ public class Patient : Person
 {
     // variables.
     private float m_Health;
-    
-    // ailment: Ailment.
+
+    private Ailment m_ailment;
 
     // setter and getters.
    public void SetHealth(float _Health)
@@ -15,7 +15,7 @@ public class Patient : Person
         m_Health = _Health;
     }
 
-    public void ShowASymtpom()
+    public void ShowASymptom()
     {
         // showing symptoms.
     }
