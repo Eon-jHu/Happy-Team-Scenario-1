@@ -19,10 +19,10 @@ public abstract class Person : MonoBehaviour
         m_Position = _Position;
     }
 
-    //public Vector2 Move()
-    //{
-    //    return; //??
-    //}
+    public void Move()
+    {
+        // Moves the character
+    }
 
     public Sprite GetSprite()
     {

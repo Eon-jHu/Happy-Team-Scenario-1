@@ -18,7 +18,5 @@ public abstract class MedicalStaff : Person
         PatientRoster?.Enqueue(_Patient); // removes (ideally) from Patient Roster
     }
 
-
-
     public abstract bool TreatPatient();
 }
