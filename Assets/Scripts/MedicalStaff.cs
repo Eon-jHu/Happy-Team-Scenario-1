@@ -15,7 +15,7 @@ public abstract class MedicalStaff : Person
     }
     public void RemovePatient(Patient _Patient)
     {
-        m_PatientRoster?.Enqueue(_Patient); // removes (ideally) from Patient Roster
+        m_PatientRoster.Dequeue(); // Removes from Patient Roster
     }
 
     public abstract bool TreatPatient();

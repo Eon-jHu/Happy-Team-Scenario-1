@@ -37,7 +37,7 @@ public class Ailment
 
     private AilmentType m_ailmentType;
     private string m_ailmentName;
-    private List<Symptom> m_symptom;
+    private List<Symptom> m_symptoms;
     private uint severity;
 
     public uint getSeverity()
@@ -45,8 +45,13 @@ public class Ailment
         return severity;
     }
 
-    public void applyAilmentPenalty()
+    public List<Symptom> getSymptoms()
     {
+        return m_symptoms;
+    }
 
+    public void applyAilmentPenalty(Patient _patient)
+    {
+        _patient.m_Health -= severity;
     }
 }

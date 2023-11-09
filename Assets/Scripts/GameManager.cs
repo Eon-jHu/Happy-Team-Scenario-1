@@ -5,19 +5,30 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // variables.
-    private static GameManager m_GameManager; // is this supposed to be a pointer?
-    private Level m_CurrentLevel;
-    private float m_GameTime;
+    private static GameManager m_GameManager;
+    [SerializeField] private Level m_CurrentLevel;
+    [SerializeField] private float m_GameTime;
     private float m_TimeRemaining;
 
-    // functions.
-    public GameManager()
+    // Singleton Method
+    private GameManager()
     {
-        // constructor.
+        m_TimeRemaining = m_GameTime;
+        LoadLevel(m_CurrentLevel);
+    }
+
+    public GameManager GetInstance()
+    {
+        if (m_GameManager == null)
+        {
+            m_GameManager = new GameManager();
+        }
+        
+        return m_GameManager; 
     }
 
     public void LoadLevel(Level _Level)
     {
-        _Level.SetUpLevel(); // set up that level G.
+        _Level.SetUpLevel();
     }
 }

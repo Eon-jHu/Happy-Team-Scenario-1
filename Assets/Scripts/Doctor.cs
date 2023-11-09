@@ -6,14 +6,14 @@ public class Doctor : MedicalStaff
 {
     private enum Specialization
     {
-        Common, // flu, chicken pox, light injury, common cold, covid
-        Surgeon, // heavy injury
-        Cardiologist, // heart attack
-        Radiologist, // pregnant
-        Allergist, // allergies
-        Plague_Doctor, // malaria
-        Toxicologist, // poisoned
-        Oncologist // cancer
+        Common, // Flu, Chicken Pox, Light Injury, Common Cold, Covid
+        Surgeon, // Heavy Injury
+        Cardiologist, // Heart Attack
+        Radiologist, // Pregnant
+        Allergist, // Allergies
+        Plague_Doctor, // Malaria
+        Toxicologist, // Poisoned
+        Oncologist // Cancer
 
     }
     public override bool TreatPatient()
