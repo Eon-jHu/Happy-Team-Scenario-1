@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class MedicalStaff : Person
 {
     // variables
-    private Queue<Patient> m_PatientRoster;
+    protected Queue<Patient> m_PatientRoster;
     private float m_HealValue;
 
     // add & remove

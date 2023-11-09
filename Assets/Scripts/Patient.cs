@@ -10,6 +10,8 @@ public class Patient : Person
         get; set;
     }
 
+    public bool m_nurseNear = false;
+
     private Ailment m_Ailment;
 
     [SerializeField] private float m_SymptomTimer;
@@ -24,10 +26,27 @@ public class Patient : Person
     {
         m_CurrentSymptomTime -= Time.deltaTime;
 
+        if (!m_nurseNear)
+        {
+            m_Health -= Time.deltaTime;
+        }
+        else
+        {
+            m_Health -= (Time.deltaTime / 3);
+        }
         if (m_CurrentSymptomTime <= 0)
         {
             m_CurrentSymptomTime = m_SymptomTimer;
             ShowASymptom();
+        }
+
+        if (m_Health == 9 || m_Health == 8 || m_Health == 7 || m_Health == 6 || m_Health == 5 || m_Health == 4 || m_Health == 3 || m_Health == 2 || m_Health == 1)
+        {
+            Debug.Log("Health at " + m_Health);
+        }
+        if (m_Health <= 0)
+        {
+            Debug.Log("Patient Died");
         }
     }
 
@@ -47,5 +66,17 @@ public class Patient : Person
         }
 
         m_Ailment.getSeverity();
+    }
+
+    public bool IsNurseClose()
+    {
+        for (int i = 0; i < m_NurseAmount; i++)
+        {
+            if (GetPosition() - Nurse.GetPosition() <= 10)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

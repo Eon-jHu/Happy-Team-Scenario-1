@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Nurse : MedicalStaff
 {
+    Nurse()
+    {
+        m_NurseAmount++;
+    }
     public override bool TreatPatient()
     {
         Debug.Log("Nurse Treating Patient");

@@ -7,6 +7,7 @@ public abstract class Person : MonoBehaviour
     // variables.
     private Vector2 m_Position;
     private Sprite m_Sprite;
+    public int m_NurseAmount = 0;
 
     // setters and getters.
     public Vector2 GetPosition()
