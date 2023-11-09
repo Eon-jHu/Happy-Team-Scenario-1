@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Level
+public abstract class Level : MonoBehaviour
 {
-    // variables.
-    private PatientManager m_PatientManager;
-    // private HospitalManager m_HospitalManager;
+    // Abstract Variables
+    public abstract PatientManager m_PatientManager { get; set; }
+    public abstract HospitalManager m_HospitalManager { get; set; }
 
     // funtions.
-    public abstract void SetUpLevel();
+    protected abstract void setUpLevel();
 }

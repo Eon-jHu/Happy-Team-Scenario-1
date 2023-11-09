@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 
-enum AilmentType
+public enum AilmentType
 {
     // Common
     flu, 
@@ -23,26 +23,32 @@ enum AilmentType
     malaria,
     // Toxicologist
     poisoned,
-    //Oncologist
-    cancer
-
+    // Oncologist
+    cancer,
 }
 
 public class Ailment
 {
-    public Ailment(string _Name)
+    public Ailment(AilmentType _type, uint _severity)
     {
-        m_ailmentName = _Name;
+        m_ailmentType = _type;
+        m_severity = _severity;
+        m_ailmentName = m_ailmentType.ToString();
     }
 
     private AilmentType m_ailmentType;
     private string m_ailmentName;
     private List<Symptom> m_symptoms;
-    private uint severity;
+    private uint m_severity;
 
     public uint getSeverity()
     {
-        return severity;
+        return m_severity;
+    }
+
+    public AilmentType getType()
+    {
+        return m_ailmentType;
     }
 
     public List<Symptom> getSymptoms()
@@ -52,6 +58,7 @@ public class Ailment
 
     public void applyAilmentPenalty(Patient _patient)
     {
-        _patient.m_Health -= severity;
+        Debug.Log("Patient's health is being deducted!");
+        _patient.m_Health -= m_severity;
     }
 }

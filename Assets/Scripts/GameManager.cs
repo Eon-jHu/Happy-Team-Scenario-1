@@ -10,13 +10,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float m_GameTime;
     private float m_TimeRemaining;
 
-    // Singleton Method
-    private GameManager()
+    private void Awake()
     {
         m_TimeRemaining = m_GameTime;
         LoadLevel(m_CurrentLevel);
     }
 
+    // Singleton Method
     public GameManager GetInstance()
     {
         if (m_GameManager == null)
@@ -29,6 +29,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevel(Level _Level)
     {
-        _Level.SetUpLevel();
+        Instantiate(_Level);
     }
 }

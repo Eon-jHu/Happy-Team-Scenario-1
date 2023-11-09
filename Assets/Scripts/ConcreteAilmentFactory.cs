@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class ConcreteAilmentFactory : AilmentFactory
 {
-    public override Ailment generateAilment(string _Ailment)
+    AilmentType[] ailmentTypes;
+
+    public override Ailment generateAilment()
     {
-        Ailment ailment = new Ailment(_Ailment);
+        // Generates a random Ailment of specified types
+        int i = Random.Range(0, (ailmentTypes.Length));
+
+        Ailment ailment = new(ailmentTypes[i], (uint)Random.Range(1, 10));
+        Debug.Log("Patient has " + ailment.getType());
         return ailment;
+    }
+
+    private void Awake()
+    {
+        // Gets the array of all AilmentTypes
+        ailmentTypes = (AilmentType[])System.Enum.GetValues(typeof(AilmentType));
+        Debug.Log("Ailment Factory initialized with " + ailmentTypes.Length + " possible Ailments.");
     }
 }

@@ -10,12 +10,12 @@ public class HospitalManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Instantiates how many of each doctor and nurse based on level
+        Debug.Log("Hospital Manager initialized.");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateStaff()
     {
-        
+        Debug.Log("Hospital Staff are moving and updating...");
     }
 }

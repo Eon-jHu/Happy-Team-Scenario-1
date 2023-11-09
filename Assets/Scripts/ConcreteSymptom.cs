@@ -6,6 +6,7 @@ public class ConcreteSymptom : Symptom
 {
     public override Animation getSymptomAnimation()
     {
-        return getSymptomAnimation();
+        Debug.Log("Patient is displaying a Symptom Animation");
+        return null;
     }
 }

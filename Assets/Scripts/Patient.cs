@@ -15,8 +15,9 @@ public class Patient : Person
     [SerializeField] private float m_SymptomTimer;
     private float m_CurrentSymptomTime;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("A new patient has arrived at the hospital!");
         m_CurrentSymptomTime = m_SymptomTimer;    
     }
 
@@ -26,26 +27,30 @@ public class Patient : Person
 
         if (m_CurrentSymptomTime <= 0)
         {
+            showASymptom();
             m_CurrentSymptomTime = m_SymptomTimer;
-            ShowASymptom();
         }
     }
 
-    public void ShowASymptom()
+    public void setAilment(Ailment _ailment)
     {
-        // Display symptom animations
-        foreach(Symptom symptom in m_Ailment.getSymptoms())
-        {
-            symptom.getSymptomAnimation();
-        }
+        m_Ailment = _ailment;
+    }
 
+    public void showASymptom()
+    {
         // Randomly apply Ailment penalties based on severity
         // A higher severity has higher chance of ailments being applied
         if (m_Ailment.getSeverity() > Random.Range(1, 10))
         {
+            // Deduct HP
             m_Ailment.applyAilmentPenalty(gameObject.GetComponent<Patient>());
-        }
 
-        m_Ailment.getSeverity();
+            // Plays a random symptom animation from that symptom
+            int iRandom = Random.Range(0, m_Ailment.getSymptoms().Count);
+            {
+                m_Ailment.getSymptoms()[iRandom].getSymptomAnimation();
+            }
+        }
     }
 }
