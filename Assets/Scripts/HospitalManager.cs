@@ -17,6 +17,6 @@ public class HospitalManager : MonoBehaviour
 
     public void updateStaff()
     {
-        //Debug.Log("Hospital Staff are moving and updating...");
+        Debug.Log("Hospital Staff are moving and updating...");
     }
 }

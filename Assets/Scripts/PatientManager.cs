@@ -25,6 +25,6 @@ public class PatientManager : MonoBehaviour
 
     public void updatePatients()
     {
-        //Debug.Log("Patients are moving and updating...");
+        Debug.Log("Patients are moving and updating...");
     }
 }
