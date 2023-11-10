@@ -17,7 +17,7 @@ public class PatientManager : MonoBehaviour
     // Spawns a new patient into the game
     public Patient spawnPatient()
     {
-        Patient newPatient = GameObject.Instantiate(m_PatientPrefab);
+        Patient newPatient = Instantiate(m_PatientPrefab);
         newPatient.setAilment(m_AilmentFactory.generateAilment());
         m_ActivePatients.Add(newPatient);
         return newPatient;

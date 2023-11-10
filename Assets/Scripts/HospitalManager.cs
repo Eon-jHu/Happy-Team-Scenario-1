@@ -12,9 +12,10 @@ public class HospitalManager : MonoBehaviour
     {
         // Instantiates how many of each doctor and nurse based on level
         Debug.Log("Hospital Manager initialized.");
+        Debug.Log("This hospital's nurses and doctors are ready to help!");
     }
 
-    public void UpdateStaff()
+    public void updateStaff()
     {
         Debug.Log("Hospital Staff are moving and updating...");
     }

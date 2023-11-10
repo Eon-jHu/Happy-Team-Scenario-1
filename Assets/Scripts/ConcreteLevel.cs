@@ -31,8 +31,8 @@ public class ConcreteLevel : Level
 
     protected override void setUpLevel()
     {
-        GameObject.Instantiate(m_PatientManager);
-        GameObject.Instantiate(m_HospitalManager);
+        Instantiate(m_PatientManager);
+        Instantiate(m_HospitalManager);
     }
 
     private void Update()
@@ -40,12 +40,12 @@ public class ConcreteLevel : Level
         currentPatientSpawnTime -= Time.deltaTime;
         if (currentPatientSpawnTime <= 0)
         {
-            m_PatientManager.spawnPatient();
             currentPatientSpawnTime = patientSpawnTimer;
+            m_PatientManager.spawnPatient();
         }
 
         patientManager.updatePatients();
-        hospitalManager.UpdateStaff();
+        hospitalManager.updateStaff();
 
     }
 }
