@@ -48,4 +48,4 @@ MonoBehaviour:
   hospitalManager: {fileID: 912121370714998340, guid: a7ea3391ee066434198e540fd5afec9c, type: 3}
   numStartingNurses: 12
   numStartingDoctors: 4
-  patientSpawnTimer: 3
+  patientSpawnTimer: 10

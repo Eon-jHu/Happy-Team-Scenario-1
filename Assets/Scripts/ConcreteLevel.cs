@@ -40,8 +40,8 @@ public class ConcreteLevel : Level
         currentPatientSpawnTime -= Time.deltaTime;
         if (currentPatientSpawnTime <= 0)
         {
-            m_PatientManager.spawnPatient();
             currentPatientSpawnTime = patientSpawnTimer;
+            m_PatientManager.spawnPatient();
         }
 
         patientManager.updatePatients();
