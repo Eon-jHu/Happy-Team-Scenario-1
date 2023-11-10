@@ -27,9 +27,9 @@ public enum AilmentType
     cancer,
 }
 
-public class Ailment
+public class Ailment : ScriptableObject
 {
-    public Ailment(AilmentType _type, uint _severity)
+    public void initializeAilment(AilmentType _type, uint _severity)
     {
         m_ailmentType = _type;
         m_severity = _severity;
@@ -49,6 +49,11 @@ public class Ailment
     public AilmentType getType()
     {
         return m_ailmentType;
+    }
+
+    public void addSymptom(Symptom _symptom)
+    {
+        m_symptoms.Add(_symptom);
     }
 
     public List<Symptom> getSymptoms()

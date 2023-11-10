@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9216982381340692428
+--- !u!1 &3838444250679361220
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9115009107399451841}
-  - component: {fileID: -9011106849776316412}
+  - component: {fileID: 3793777030771985296}
+  - component: {fileID: 3593199760454938004}
   m_Layer: 0
-  m_Name: ConcreteAilmentFactory
+  m_Name: ConcreteSymptom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9115009107399451841
+--- !u!4 &3793777030771985296
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216982381340692428}
+  m_GameObject: {fileID: 3838444250679361220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,17 +32,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-9011106849776316412
+--- !u!114 &3593199760454938004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9216982381340692428}
+  m_GameObject: {fileID: 3838444250679361220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8dd5567cba42404685707374ea0026f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b026ad146e010248a3b0f8e00b173d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  symptoms:
-  - {fileID: 3838444250679361220, guid: 76372d38f60daee4fbd39f6a7ca48d1e, type: 3}

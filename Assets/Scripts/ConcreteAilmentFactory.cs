@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class ConcreteAilmentFactory : AilmentFactory
 {
-    AilmentType[] ailmentTypes;
+    List<AilmentType> ailmentTypes;
+    [SerializeField] GameObject[] symptoms;
 
     public override Ailment generateAilment()
     {
         // Generates a random Ailment of specified types
-        int i = Random.Range(0, (ailmentTypes.Length));
+        int i = Random.Range(0, (ailmentTypes.Count));
 
-        Ailment ailment = new(ailmentTypes[i], (uint)Random.Range(1, 10));
+        // Starts the initialization process
+        OnStart();
+
+        // Generates a new ailment and returns it
+        Ailment ailment = ScriptableObject.CreateInstance<Ailment>();
+        ailment.initializeAilment(ailmentTypes[i], (uint)Random.Range(0, 10));
+
         Debug.Log("Patient has " + ailment.getType());
         return ailment;
     }
 
-    private void Awake()
+    private void OnStart()
     {
-        // Gets the array of all AilmentTypes
-        ailmentTypes = (AilmentType[])System.Enum.GetValues(typeof(AilmentType));
-        Debug.Log("Ailment Factory initialized with " + ailmentTypes.Length + " possible Ailments.");
+        // Gets the array of all AilmentTypes and initializes them
+        AilmentType[] ailmentTypeArray = (AilmentType[])System.Enum.GetValues(typeof(AilmentType));
+        ailmentTypes = new List<AilmentType>(ailmentTypeArray);
+        Debug.Log("Ailment Factory initialized with " + ailmentTypes.Count + " possible Ailments.");
     }
 }

@@ -31,8 +31,8 @@ public class ConcreteLevel : Level
 
     protected override void setUpLevel()
     {
-        GameObject.Instantiate(m_PatientManager);
-        GameObject.Instantiate(m_HospitalManager);
+        Instantiate(m_PatientManager);
+        Instantiate(m_HospitalManager);
     }
 
     private void Update()
@@ -45,7 +45,7 @@ public class ConcreteLevel : Level
         }
 
         patientManager.updatePatients();
-        hospitalManager.UpdateStaff();
+        hospitalManager.updateStaff();
 
     }
 }

@@ -27,8 +27,8 @@ public class Patient : Person
 
         if (m_CurrentSymptomTime <= 0)
         {
-            showASymptom();
             m_CurrentSymptomTime = m_SymptomTimer;
+            showASymptom();
         }
     }
 
@@ -47,10 +47,8 @@ public class Patient : Person
             m_Ailment.applyAilmentPenalty(gameObject.GetComponent<Patient>());
 
             // Plays a random symptom animation from that symptom
-            int iRandom = Random.Range(0, m_Ailment.getSymptoms().Count);
-            {
-                m_Ailment.getSymptoms()[iRandom].getSymptomAnimation();
-            }
+            Debug.Log("Patient is showing a symptom!");
+            
         }
     }
 }
